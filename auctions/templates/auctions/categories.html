@@ -1,0 +1,19 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+<style>
+    .divcss{text-align:center;margin-top: 50px;margin-right: 400px;border-radius: 10px; color:lightgreen; font-size: larger;}
+</style>
+<h2>Categories</h2>
+<div class="divcss">
+    <div class="row">
+        <div class="col">
+            <div class="list-group">
+            {% for category in categories %}
+            <a href="{% url 'category' category.0 %}"
+                class="list-group-item list-group-item-action">{{ category.1 }}</a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
